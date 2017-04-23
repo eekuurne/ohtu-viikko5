@@ -1,0 +1,5 @@
+*.DS_Store
+*.tmp
+.gradle/
+/MockitoDemo/.nb-gradle/
+/MockitoDemo/build/
