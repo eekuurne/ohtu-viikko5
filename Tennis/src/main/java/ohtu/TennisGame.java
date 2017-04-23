@@ -4,13 +4,13 @@ import java.util.HashMap;
 
 public class TennisGame {
 
+    private final int GOAL = 4;
+    private final int NEEDED_DIFFERENCE = 2;
+    
     private int player1Score = 0;
     private int player2Score = 0;
     private String player1;
     private String player2;
-
-    private final int GOAL = 4;
-    private final int NEEDED_DIFFERENCE = 2;
 
     public TennisGame(String player1, String player2) {
         this.player1 = player1;
@@ -31,7 +31,7 @@ public class TennisGame {
         } else if (player1Score >= GOAL || player2Score >= GOAL) {
             return overGoal();
         } else {
-            return scoreNames().get(player1Score) + "-" + scoreNames().get(player2Score);
+            return unequalScore();
         }
     }
 
@@ -52,6 +52,10 @@ public class TennisGame {
         } else {
             return "Advantage " + player2;
         }
+    }
+    
+    private String unequalScore() {
+        return scoreNames().get(player1Score) + "-" + scoreNames().get(player2Score);
     }
 
     private HashMap<Integer, String> scoreNames() {
